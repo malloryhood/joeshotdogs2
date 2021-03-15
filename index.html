@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+	<head>
+		<title> Joe's Hotdog Stand</title>
+		<link rel="stylesheet" type = "text/css" href="joesStyle.css">
+		<script type="text/javascript">
+			//A function to determine order details and print
+			function order() //call when button pushed
+			{ 
+				//read from form
+				hotdogs = parseInt(document.getElementById("hotdogs").value);
+				fries = parseInt(document.getElementById("fries").value);
+				drinks = parseInt(document.getElementById("drinks").value);
+				
+				//output error if relevant
+				if(hotdogs==0 && fries==0 && drinks==0){
+					alert("Error:\nYou did not order any Items!\n\nPlease return to order form and change quantity of at least one item!")
+					return;
+				}
+			
+				//compute values
+				subtotal = (3.25 * hotdogs) + (2 * fries) +(1.50 * drinks);
+				discount = 0;
+				if (subtotal >= 20){
+					discount = (.1 * subtotal);
+				}
+				newtotal = subtotal - discount;
+				tax = newtotal * .0625;
+				total = newtotal + tax;
+			
+				//output details
+				alert("Order details:  \n\nQuantity:\nHotogs: "+ hotdogs + "\nFries: "+ fries + "\nDrinks: " + drinks + "\n\nPrice:\nSubtotal: $" + subtotal.toFixed(2) + "\nDiscount: $" + discount.toFixed(2) + "\nTax: $" + tax.toFixed(2) + "\nTotal: $" + total.toFixed(2))
+			}
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<header>
+				<img id = "logo" height="100px" align="left" src="C:\Users\kindskates846\OneDrive\Desktop\comp20\hw4 Joe's Hotdogs\hotdog.jpg">
+				<h1> &nbsp; Welcome to Joe's Hotdog Stand!</h1>
+		</header>
+		<br>
+		<h2>Order Here:</h2> 
+		<form>
+		<h1>Hotdogs: $3.25 </h1>
+		<label for="hotdogs">Hotdog quantity:</label>
+		<select id="hotdogs" name="hotdogs">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+		</select><br><br>
+		<h1>French Fries: $2.00</h1>
+		<label for="fries">French fry quantity:</label>
+		<select id="fries" name="fries">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+		</select><br><br>
+		<h1>Drinks: $1.50 </h1>
+		<label for="drinks">Drink quantity:</label>
+		<select id="drinks" name="drinks">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+		</select>
+		<br><br><br>
+		<input type="button" id="button" onclick="order()" value = "Order Now!">
+		</form>
+		<br>
+	</body>	
+</html>
