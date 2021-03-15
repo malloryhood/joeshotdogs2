@@ -4,7 +4,8 @@ body{
 	width: 100%;
 	float: left;
 	font-family: "Georgia";
-	background-color: #E9C88A
+	background-color: #E9C88A;
+	margin-top:15%;
 }
 
 header{
@@ -21,16 +22,10 @@ header{
 	align="left";
 	padding-left:0px;
 }
-body{
-    margin-top:15%;
-}
+
 #logo {
     margin-top:1%;
-	padding-left: 5%;
-}
-ul{
-	text-align: center;
-    	list-style-position: inside;
+    padding-left: 5%;
 }
 
 #button{
@@ -47,7 +42,7 @@ ul{
 	font-family: "Georgia";
 }
 
-h2{
+h3{
 	color: #ED4C2F;
 	text-decoration: bold;
 	font-size: 28px; 
